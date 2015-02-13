@@ -42,7 +42,8 @@
 			<div class="slides">
 				<section>
 					<h1>CloudStack NYC</h1>
-					<h3>Networking</h3>
+					<h3>Networking Overview</h3>
+					Current as of Apache CloudStack 4.4/Citrix CloudPlatform 4.5
 				</section>
 
 				<section>
@@ -101,11 +102,11 @@
 					<h1>Advanced</h1>
 					<h2>Isolated</h2>
 					<ul>
-						<li class="fragment">VLAN isolation between Domains</li>
+						<li class="fragment">VLAN isolation between Networks and Domains</li>
 						<li class="fragment">Requires Advanced Networking</li>
 						<ul>
 							<li class="fragment">Hypervisor Support:</li>
-							<ul>
+							<ul class="fragment">
 								<li>KVM</li>
 								<li>XenServer</li>
 								<li>VMware vSphere</li>
@@ -113,8 +114,114 @@
 								<li>Hyper-V</li>
 								<li>Bare metal</li>
 							</ul>
+							<li class="fragment">Requires 802.1Q capable hardware (switch/router/firewall)</li>
 						</ul>
 					</ul>
+				</section>
+				<section>
+					<h1>Advanced</h1>
+					<h2>Isolated</h2>
+					<ul>
+						<li class="fragment">A single VM can live in one or more network(s)</li>
+						<li class="fragment">Each Isolated Network is a VLAN (even within a Domain)</li>
+						<li class="fragment">Cross-Network traffic can be routed via a VM in both networks or VPN.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Advanced</h1>
+					<h2>VPC</h2>
+					<ul>
+						<li class="fragment">VLAN isolation between VPCs and Domains</li>
+						<li class="fragment">Requires Advanced Networking</li>
+						<ul>
+							<li class="fragment">Hypervisor Support:</li>
+							<ul class="fragment">
+								<li>KVM</li>
+								<li>XenServer</li>
+								<li>VMware vSphere</li>
+								<li>LXC</li>
+								<li>Hyper-V</li>
+							</ul>
+							<li class="fragment">Requires 802.1Q capable hardware (switch/router/firewall)</li>
+						</ul>
+				</section>
+				<section>
+					<h1>Advanced</h1>
+					<h2>VPC</h2>
+					<ul>
+						<li class="fragment">Domain VPC defines a SuperNet and Networks are created as Subnets of this SuperNet.</li>
+							<li class="fragment">A single VM can live in only one tier (Subnet)</li>
+							<ul>
+								<li class="fragment">(But it can live in a VPC tier and an isolated network)</li>
+							</ul>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Network Service Offerings</h2>
+					<ul>
+						<li class="fragment">Means of defining what Network Services you want to offer to your Domains</li>
+						<li class="fragment">Defaults provide <i>most</i> services for a given Network Type</li>
+						<li class="fragment">New offerings can be created to tie into other Network Devices:</li>
+						<ul class="fragment">
+							<li>Netscaler</li>
+							<li>Nicera NVP</li>
+							<li>Brocade</li>
+							<li>BigSwitch VNS</li>
+							<li>Bigswitch F5</li>
+							<li>OpenDaylight (Experimental)</li>
+							<li>Cisco VNMC</li>
+							<li>Midonet</li>
+							<li>Nuage VSP</li>
+							<li>Juniper SRX</li>
+							<li>Palo Alto</li>
+							<li>...and so many more...</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Virtual Router</h1>
+					<ul>
+						<li class="fragment">One per-CIDR block for Basic and Advanced with Security Groups</li>
+						<li class="fragment">One per-network for Advanced Isolated</li>
+						<li class="fragment">One per-VPC for Advanced VPC</li>
+						<li class="fragment">Provides:</li>
+						<ul>
+							<li class="fragment">Routing</li>
+							<li class="fragment">Firewalling</li>
+							<li class="fragment">NAT</li>
+							<li class="fragment">Load Balancing</li>
+							<li class="fragment">VPN</li>
+							<ul>
+								<li class="fragment">Road-Warrior for Advanced Isolated</li>
+								<li class="fragment">Site-to-Site for Advanced VPC</li>
+							</ul>
+							<li class="fragment">DHCP</li>
+							<li class="fragment">DNS</li>
+							<li class="fragment">PXE (for BareMetal)</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Networking Concerns</h1>
+					<ul>
+						<li class="fragment">IP Addresses</li>
+						<ul>
+							
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Wrap-Up</h1>
+					<hr />
+					<h3>Network Diagram Icons (c) Node-Nine, Inc.</h3> (ciscomentor.com)
+					<h3><br /></h3>
+					<h3>Thank you BWG Strategy</h3>
 				</section>
 
 			</div>
