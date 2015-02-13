@@ -170,7 +170,7 @@
 							<li>Nicera NVP</li>
 							<li>Brocade</li>
 							<li>BigSwitch VNS</li>
-							<li>Bigswitch F5</li>
+							<li>F5</li>
 							<li>OpenDaylight (Experimental)</li>
 							<li>Cisco VNMC</li>
 							<li>Midonet</li>
@@ -207,11 +207,31 @@
 				</section>
 
 				<section>
-					<h1>Networking Concerns</h1>
+					<h2>Networking Concerns</h2>
 					<ul>
-						<li class="fragment">IP Addresses</li>
+						<li class="fragment">IP Addresses/VLANs</li>
 						<ul>
-							
+							<li class="fragment">Must hold at least 3 IP addresses for System VMs (more for Advanced)</li>
+							<li class="fragment">Public Space</li>
+							<ul>
+								<li class="fragment">IP addresses for "Public" IPs</li>
+								<li class="fragment">"Public" IPs are held by Router VMs on their "outside" interface</li>
+							</ul>
+							<li class="fragment">Guest Space</li>
+							<ul>
+								<li class="fragment">VLAN range used by Guest Networks in an Advanced Isolated/VPC Zone</li>
+								<li class="fragment">Default CIDR block can be set in Zone creation</li>
+								<li class="fragment">...but Default CIDR block can be overridden</li>
+							</ul>
+							<li class="fragment">Management Space</li>
+							<ul>
+								<li class="fragment">VLAN/IP space used to manage Hypervisors</li>
+								<li class="fragment">Also used for "link-local" (System VM) management on VMware</li>
+							</ul>
+							<li class="fragment">Storage Space</li>
+							<ul>
+								<li class="fragment">Used for communication from Hypervisor to Primary and Secondary Storage</li>
+							</ul>
 						</ul>
 					</ul>
 				</section>
@@ -221,7 +241,7 @@
 					<hr />
 					<h3>Network Diagram Icons (c) Node-Nine, Inc.</h3> (ciscomentor.com)
 					<h3><br /></h3>
-					<h3>Thank you BWG Strategy</h3>
+					<h3>Thank you BWG Strategy and Citrix</h3>
 				</section>
 
 			</div>
